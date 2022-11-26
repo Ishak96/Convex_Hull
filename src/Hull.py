@@ -1,6 +1,19 @@
-class Jarvis:
+class Hull(object):
     def __init__(self):
         self.hull = []
+    
+    def run(self, cloud):
+        raise NotImplementedError
+        
+    def display(self):
+        for index in range(len(self.hull) - 1):
+            line(self.hull[index].x, self.hull[index].y, self.hull[index + 1].x, self.hull[index + 1].y)
+        
+        line(self.hull[0].x, self.hull[0].y, self.hull[-1].x, self.hull[-1].y)        
+    
+class Jarvis(Hull):
+    def __init__(self):
+        super(Jarvis, self).__init__()
     
     def leftIndex(self, cloud):
         minn = cloud.__getitem__(0)
@@ -50,9 +63,3 @@ class Jarvis:
             # While we don't come to first point
             if(p == l):
                 break
-    
-    def display(self):
-        for index in range(len(self.hull) - 1):
-            line(self.hull[index].x, self.hull[index].y, self.hull[index + 1].x, self.hull[index + 1].y)
-        
-        line(self.hull[0].x, self.hull[0].y, self.hull[-1].x, self.hull[-1].y)

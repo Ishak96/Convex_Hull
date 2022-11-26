@@ -2,7 +2,7 @@ from Hull import Jarvis
 from Cloud import *
 
 win_size = 500
-n_samples = 100
+n_samples = 50
 
 cloud = Cloud()
 jarvis = Jarvis()
