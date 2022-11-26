@@ -63,3 +63,10 @@ class Jarvis(Hull):
             # While we don't come to first point
             if(p == l):
                 break
+            
+class Graham(Hull):
+    def __init__(self):
+        super(Graham, self).__init__()
+        
+    def run(self, cloud):
+        pass
