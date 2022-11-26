@@ -135,6 +135,9 @@ application.macosx
 build-tmp/
 web-export/
 
+*$py.class
+*data/*
+
 #################################
 # Some specific to my workflow  #
 #################################
