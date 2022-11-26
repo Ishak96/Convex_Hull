@@ -7,7 +7,17 @@ class Cloud:
         self.offset = 50
         self.cloud = []
     
-    def addPoint(self, p):
+    def __size__(self):
+        return len(self.cloud)
+
+    def __getitem__(self, index):
+        try:
+            return self.cloud[index]
+        except IndexError:
+            return None
+            print("Index should be smaller.")
+        
+    def __add__(self, p):
         self.cloud.append(p)    
     
     def generate(self, w_size, n_samples):
@@ -16,7 +26,7 @@ class Cloud:
             y = random.randint(self.offset, w_size-self.offset)
 
             p = Point(x, y)
-            self.addPoint(p)
+            self.__add__(p)
             
     def display(self):
         for p in self.cloud:
